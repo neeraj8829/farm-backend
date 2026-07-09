@@ -22,7 +22,12 @@ class Settings:
     cors_origins: tuple[str, ...] = tuple(
         os.environ.get("CORS_ORIGINS", "*").split(",")
     )
+    cloudinary_cloud_name: str = os.environ.get("CLOUDINARY_CLOUD_NAME", "")
+    cloudinary_api_key: str = os.environ.get("CLOUDINARY_API_KEY", "")
+    cloudinary_api_secret: str = os.environ.get("CLOUDINARY_API_SECRET", "")
+    cloudinary_folder: str = (
+        os.environ.get("CLOUDINARY_FOLDER", "farmhouse") or "farmhouse"
+    )
 
 
 settings = Settings()
-
